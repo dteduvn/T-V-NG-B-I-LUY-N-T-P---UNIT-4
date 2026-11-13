@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D&amp;T Academy – Từ vựng: City Life &amp; Comparatives</title>
+<style>
+:root{--g:#2E7D32;--g2:#43A047;--gl:#E8F5E9;--gm:#A5D6A7;--y:#FFD54F;--r:#E53935;--ink:#1B2A1E;--mut:#5f6f62}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:"Segoe UI",Roboto,Arial,sans-serif;background:#F4FAF4;color:var(--ink)}
+header{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;padding:14px 16px 10px;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+header h1{margin:0;font-size:19px}
+header .sub{font-size:13px;opacity:.9;margin-top:2px}
+.prog{margin-top:8px;background:rgba(255,255,255,.3);border-radius:99px;height:10px;overflow:hidden}
+.prog>div{height:100%;background:var(--y);width:0;transition:width .4s}
+.progtxt{font-size:12px;margin-top:3px}
+.wrap{max-width:860px;margin:0 auto;padding:12px}
+.groups{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px}
+.groups button,.modes button{flex:0 0 auto;border:2px solid var(--gm);background:#fff;color:var(--g);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer}
+.groups button.on,.modes button.on{background:var(--g);border-color:var(--g);color:#fff}
+.modes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px}
+.modes button{border-radius:14px;padding:10px 4px;font-size:13px}
+.modes button span{display:block;font-size:22px}
+@media(max-width:560px){.modes{grid-template-columns:repeat(3,1fr)}.modes button{font-size:12px}}
+.tin{width:100%;max-width:420px;padding:14px;font-size:22px;text-align:center;border:3px solid var(--gm);border-radius:14px;margin-top:14px;font-weight:700;color:var(--g)}
+.tin.bad{border-color:var(--r);color:var(--r);animation:sh .35s}.tin.ok{border-color:var(--g);background:var(--gl)}
+.mask{font-size:22px;letter-spacing:6px;color:var(--mut);margin-top:8px;font-weight:700}
+.card{background:#fff;border-radius:18px;padding:16px;box-shadow:0 2px 10px rgba(46,125,50,.1);margin-bottom:12px}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.w{position:relative;background:#fff;border-radius:16px;padding:12px 14px;border-left:6px solid var(--gm);box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.w.known{border-left-color:var(--g)}
+.w .en{font-size:20px;font-weight:700;color:var(--g)}
+.w .ipa{color:var(--mut);font-size:14px}
+.w .pos{display:inline-block;font-size:11px;background:var(--gl);color:var(--g);border-radius:6px;padding:1px 6px;margin-left:4px;vertical-align:middle}
+.w .vi{font-size:16px;margin:4px 0;font-weight:600}
+.w .ex{font-size:14px;color:#333;font-style:italic}
+.w .cmp{font-size:14px;color:#8a5a00;font-weight:600}
+.spk{border:none;background:var(--gl);border-radius:50%;width:36px;height:36px;font-size:17px;cursor:pointer;flex:0 0 auto}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.stars{font-size:12px;color:#f9a825;letter-spacing:1px}
+b.t{color:var(--g);font-style:normal}
+.btn{border:none;border-radius:14px;padding:12px 18px;font-size:16px;font-weight:700;cursor:pointer;background:var(--g);color:#fff}
+.btn.sec{background:#fff;color:var(--g);border:2px solid var(--g)}
+.btn.red{background:#fff;color:var(--r);border:2px solid var(--r)}
+.center{text-align:center}
+.qtop{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--mut);margin-bottom:8px}
+.qbar{height:8px;background:var(--gl);border-radius:99px;overflow:hidden;margin-bottom:14px}.qbar>div{height:100%;background:var(--g2);transition:width .3s}
+.big{font-size:30px;font-weight:800;color:var(--g);margin:6px 0}
+.hint{font-size:18px;font-weight:600;margin:6px 0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+@media(max-width:480px){.opts{grid-template-columns:1fr}}
+.opt{border:2px solid var(--gm);background:#fff;border-radius:14px;padding:14px 10px;font-size:17px;font-weight:600;cursor:pointer;color:var(--ink)}
+.opt.ok{background:var(--g);border-color:var(--g);color:#fff}
+.opt.bad{background:#FFEBEE;border-color:var(--r);color:var(--r);animation:sh .35s}
+@keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.flash{perspective:1000px;height:260px;cursor:pointer;margin:8px 0 14px}
+.fi{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flash.flip .fi{transform:rotateY(180deg)}
+.fs{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center}
+.front{background:linear-gradient(135deg,#fff,var(--gl));border:3px solid var(--gm)}
+.back{background:var(--g);color:#fff;transform:rotateY(180deg)}
+.back .big{color:#fff}
+.slots{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;margin:14px 0;min-height:48px}
+.slot{width:34px;height:42px;border-bottom:3px solid var(--g);font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;color:var(--g)}
+.slot.sp{border-bottom:none;width:16px}
+.slots.bad .slot{color:var(--r);border-color:var(--r);animation:sh .35s}
+.keys{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+.key{width:44px;height:46px;border-radius:12px;border:2px solid var(--gm);background:#fff;font-size:20px;font-weight:700;color:var(--ink);cursor:pointer}
+.key.used{visibility:hidden}
+.key.wide{width:auto;padding:0 12px;font-size:15px}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match .col{display:flex;flex-direction:column;gap:8px}
+.mi{border:2px solid var(--gm);background:#fff;border-radius:12px;padding:12px 8px;font-size:15px;font-weight:600;cursor:pointer;text-align:center;min-height:52px}
+.mi.sel{border-color:var(--y);background:#FFF8E1}
+.mi.done{background:var(--g);border-color:var(--g);color:#fff;opacity:.55;pointer-events:none}
+.mi.bad{border-color:var(--r);background:#FFEBEE;animation:sh .35s}
+.sent{font-size:20px;line-height:1.6;margin:10px 0}
+.gap{display:inline-block;min-width:90px;border-bottom:3px solid var(--g);color:var(--g);font-weight:800}
+.fb{min-height:26px;font-weight:700;margin-top:10px}
+.fb.ok{color:var(--g)}.fb.no{color:var(--r)}
+.endbig{font-size:54px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+.toolbar input{flex:1;min-width:150px;padding:10px 12px;border-radius:12px;border:2px solid var(--gm);font-size:15px}
+.tag{font-size:12px;color:var(--mut)}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:18px}
+@media print{header,.groups,.modes,.toolbar,.spk,footer{display:none}.w{break-inside:avoid;box-shadow:none;border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🌿 D&amp;T Academy – Vocabulary Booster</h1>
+  <div class="sub">City life · Places · Directions · Comparatives</div>
+  <div class="prog"><div id="pbar"></div></div>
+  <div class="progtxt" id="ptxt"></div>
+</header>
+<div class="wrap">
+  <div class="groups" id="groups"></div>
+  <div class="modes" id="modes"></div>
+  <div id="main"></div>
+</div>
+<footer>D&amp;T Academy · Nam Ban – Lâm Hà – Lâm Đồng · Hotline/Zalo 0376 669 694</footer>
+<script>
+var GROUPS = [{"id": "cmp", "name": "So sánh hơn", "icon": "📏", "words": [["slim", "/slɪm/", "adj", "mảnh khảnh, thon thả", "Lan is *slimmer* than her sister.", "slimmer"], ["bad", "/bæd/", "adj", "tệ, xấu", "She is still ill. She looks even *worse* than last week.", "worse"], ["easy", "/ˈiːzi/", "adj", "dễ", "Smartphones make our lives *easier*.", "easier"], ["careful", "/ˈkeəfl/", "adj", "cẩn thận", "Nam is *more careful* than Minh.", "more careful"], ["old", "/əʊld/", "adj", "già; cổ kính", "The church is *older* than the library.", "older"], ["expensive", "/ɪkˈspensɪv/", "adj", "đắt", "The oil painting is *more expensive* than the watercolour.", "more expensive"], ["cheap", "/tʃiːp/", "adj", "rẻ", "The watercolour is *cheaper* than the oil painting.", "cheaper"], ["weak", "/wiːk/", "adj", "yếu", "Nam is *weaker* than Daniel.", "weaker"], ["popular", "/ˈpɒpjələ(r)/", "adj", "được nhiều người yêu thích", "Mike is *more popular* than Thanh.", "more popular"], ["kind", "/kaɪnd/", "adj", "tốt bụng", "Ha is *kinder* than Hanh.", "kinder"], ["stressful", "/ˈstresfl/", "adj", "căng thẳng", "Her job is a lot *more stressful* than mine.", "more stressful"], ["convenient", "/kənˈviːniənt/", "adj", "tiện lợi", "Smartphones make our lives *more convenient*.", "more convenient"], ["young", "/jʌŋ/", "adj", "trẻ", "We need *younger* actors for this film.", "younger"]]}, {"id": "daily", "name": "Từ thường dùng", "icon": "🧩", "words": [["giraffe", "/dʒəˈrɑːf/", "n", "con hươu cao cổ", "A *giraffe* is taller than a man.", ""], ["last", "/lɑːst/", "v", "kéo dài (thời gian)", "The film *lasts* two and a half hours.", ""], ["videotape", "/ˈvɪdiəʊteɪp/", "n", "băng video", "The *videotape* is only two hours long.", ""], ["oil painting", "/ˈɔɪl peɪntɪŋ/", "n", "tranh sơn dầu", "The *oil painting* is $100.", ""], ["lift", "/lɪft/", "v", "nâng, nhấc lên", "Daniel can *lift* 50 kilos.", ""], ["have to", "/ˈhæv tə/", "v", "phải (làm gì)", "Thinh *has to* work nine hours every day.", ""], ["only", "/ˈəʊnli/", "adv", "chỉ", "Ha *only* works three hours.", ""], ["think", "/θɪŋk/", "v", "nghĩ", "I *think* she is still ill.", ""], ["still", "/stɪl/", "adv", "vẫn còn", "She is *still* ill.", ""], ["ill", "/ɪl/", "adj", "ốm, bệnh", "She is still *ill*.", ""], ["look", "/lʊk/", "v", "trông có vẻ", "She *looks* worse than last week.", ""], ["job", "/dʒɒb/", "n", "công việc", "Her *job* is very stressful.", ""], ["study", "/ˈstʌdi/", "v", "học", "I can't *study* in this room.", ""], ["find", "/faɪnd/", "v", "tìm", "I'm going to *find* a quieter place.", ""], ["place", "/pleɪs/", "n", "nơi, chỗ", "I'm going to find a quieter *place*.", ""], ["smartphone", "/ˈsmɑːtfəʊn/", "n", "điện thoại thông minh", "*Smartphones* make our lives easier.", ""], ["make", "/meɪk/", "v", "làm cho", "Smartphones *make* our lives easier.", ""], ["life", "/laɪf/", "n", "cuộc sống", "*Life* in a city is busy.", ""], ["need", "/niːd/", "v", "cần", "We *need* younger actors.", ""], ["actor", "/ˈæktə(r)/", "n", "diễn viên", "We need younger *actors* for this film.", ""]]}, {"id": "street", "name": "Đường phố & chỉ đường", "icon": "🧭", "words": [["grocery store", "/ˈɡrəʊsəri stɔː(r)/", "n", "cửa hàng tạp hóa", "Is there a *grocery store* near here?", ""], ["corner", "/ˈkɔːnə(r)/", "n", "góc đường", "Turn at the next *corner*.", ""], ["historic house", "/hɪˈstɒrɪk haʊs/", "n", "nhà cổ", "Let's visit some *historic houses* in the town.", ""], ["amusement park", "/əˈmjuːzmənt pɑːk/", "n", "công viên giải trí", "It's opposite the *amusement park*.", ""], ["road", "/rəʊd/", "n", "con đường", "Why is the *road* so crowded?", ""], ["weekend", "/ˌwiːkˈend/", "n", "cuối tuần", "The road is crowded at *weekends*.", ""], ["theatre", "/ˈθɪətə(r)/", "n", "nhà hát, rạp", "The police station is in front of the movie *theatre*.", ""], ["bakery", "/ˈbeɪkəri/", "n", "tiệm bánh", "The *bakery* is between the hotel and the restaurant.", ""], ["drugstore", "/ˈdrʌɡstɔː(r)/", "n", "hiệu thuốc", "There are two *drugstores* opposite the hospital.", ""], ["hospital", "/ˈhɒspɪtl/", "n", "bệnh viện", "There are two drugstores opposite the *hospital*.", ""], ["speaker", "/ˈspiːkə(r)/", "n", "người nói", "The *speaker* gives directions to the museum.", ""], ["directions", "/dəˈrekʃnz/", "n", "sự chỉ đường", "The speaker gives *directions* to the museum.", ""], ["roundabout", "/ˈraʊndəbaʊt/", "n", "vòng xoay, bùng binh", "Go round the *roundabout*.", ""], ["go past", "/ɡəʊ pɑːst/", "v", "đi qua", "*Go past* the bank.", ""], ["opposite", "/ˈɒpəzɪt/", "prep", "đối diện", "It's *opposite* the amusement park.", ""], ["traffic lights", "/ˈtræfɪk laɪts/", "n", "đèn giao thông", "Go straight on to the *traffic lights*.", ""], ["go straight on", "/ɡəʊ streɪt ɒn/", "v", "đi thẳng", "*Go straight on* to the traffic lights.", ""], ["take the second left", "/teɪk ðə ˈsekənd left/", "v", "rẽ trái ở ngã rẽ thứ hai", "*Take the second left*, then it's on your right.", ""], ["take the second right", "/teɪk ðə ˈsekənd raɪt/", "v", "rẽ phải ở ngã rẽ thứ hai", "*Take the second right* and go past the park.", ""], ["palace", "/ˈpæləs/", "n", "cung điện", "You can go and see Buckingham *Palace*.", ""], ["memorial", "/məˈmɔːriəl/", "n", "đài tưởng niệm", "The *memorial* was built in memory of soldiers.", ""], ["mausoleum", "/ˌmɔːsəˈliːəm/", "n", "lăng", "Ba Dinh Square is in front of Ho Chi Minh *Mausoleum*.", ""], ["arrive", "/əˈraɪv/", "v", "đến nơi", "The train *arrives* at Saigon at 4 am.", ""], ["build", "/bɪld/", "v", "xây dựng (built = đã được xây)", "The church was *built* in 1878.", ""], ["soldier", "/ˈsəʊldʒə(r)/", "n", "người lính", "It was built in memory of *soldiers* who died in the war.", ""], ["in memory of", "/ɪn ˈmeməri əv/", "phr", "để tưởng nhớ", "It was built *in memory of* soldiers.", ""], ["war", "/wɔː(r)/", "n", "chiến tranh", "Soldiers died in the *war*.", ""], ["be regarded as", "/bi rɪˈɡɑːdɪd əz/", "phr", "được coi là", "Duc Ba Church *is regarded as* the biggest church in Ho Chi Minh City.", ""], ["Confucius", "/kənˈfjuːʃəs/", "n", "Khổng Tử", "Van Mieu is a temple of *Confucius*.", ""], ["pay a visit", "/peɪ ə ˈvɪzɪt/", "phr", "ghé thăm", "*Pay a visit* to the War Remnants Museum.", ""], ["remnants", "/ˈremnənts/", "n", "chứng tích, phần còn lại", "Visit the War *Remnants* Museum.", ""]]}, {"id": "citycountry", "name": "Thành phố & nông thôn", "icon": "🏙️", "words": [["should", "/ʃʊd/", "modal", "nên", "You *should* live in the country if you have asthma.", ""], ["problem", "/ˈprɒbləm/", "n", "vấn đề", "You have *problems* with breathing.", ""], ["breath", "/breθ/", "n", "hơi thở", "Take a deep *breath*.", ""], ["disease", "/dɪˈziːz/", "n", "bệnh tật", "Pollution can cause many *diseases*.", ""], ["international", "/ˌɪntəˈnæʃnəl/", "adj", "quốc tế", "She would like to work for an *international* company.", ""], ["company", "/ˈkʌmpəni/", "n", "công ty", "He works for a big *company*.", ""], ["distance", "/ˈdɪstəns/", "n", "khoảng cách", "In the country, the *distance* between people is greater.", ""], ["opportunity", "/ˌɒpəˈtjuːnəti/", "n", "cơ hội", "You have more *opportunities* to meet people in the city.", ""], ["prefer", "/prɪˈfɜː(r)/", "v", "thích hơn", "I still *prefer* village life to life in a big city.", ""], ["although", "/ɔːlˈðəʊ/", "conj", "mặc dù", "*Although* it is quiet, I love my village.", ""], ["but", "/bʌt/", "conj", "nhưng", "It is small, *but* I love it.", ""], ["type", "/taɪp/", "n", "kiểu, loại", "Are you the *type* of person who loves meeting people?", ""], ["culture", "/ˈkʌltʃə(r)/", "n", "văn hóa", "People from different *cultures* live in the city.", ""], ["social status", "/ˈsəʊʃl ˈsteɪtəs/", "n", "địa vị xã hội", "People of different *social status* live in the city.", ""], ["background", "/ˈbækɡraʊnd/", "n", "xuất thân, hoàn cảnh", "People from all different *backgrounds* come to the city.", ""], ["come", "/kʌm/", "v", "đến", "People *come* to the city to work.", ""], ["centralized", "/ˈsentrəlaɪzd/", "adj", "tập trung (về một nơi)", "Everything is so *centralized* in the city.", ""], ["population", "/ˌpɒpjuˈleɪʃn/", "n", "dân số", "The city's *population* is very large.", ""], ["concentrated", "/ˈkɒnsntreɪtɪd/", "adj", "tập trung đông", "The population is *concentrated* in the city.", ""], ["chance", "/tʃɑːns/", "n", "cơ hội", "You have a higher *chance* of meeting people.", ""], ["less", "/les/", "det", "ít hơn", "There is *less* pollution in the country.", ""], ["hence", "/hens/", "adv", "vì vậy, do đó", "*Hence*, if you want a busy social life, the city is better.", ""], ["social life", "/ˈsəʊʃl laɪf/", "n", "đời sống xã hội", "If you want a busy *social life*, the city is better.", ""], ["asthma", "/ˈæsmə/", "n", "bệnh hen suyễn", "If you have *asthma*, the country is better for you.", ""], ["sensitive", "/ˈsensətɪv/", "adj", "nhạy cảm", "Are you *sensitive* to pollution?", ""], ["pollution", "/pəˈluːʃn/", "n", "sự ô nhiễm", "There is much less *pollution* in the country.", ""], ["lifestyle", "/ˈlaɪfstaɪl/", "n", "lối sống", "The country *lifestyle* is best for you.", ""], ["traffic", "/ˈtræfɪk/", "n", "giao thông, xe cộ", "There is less *traffic* in the country.", ""], ["industrial plant", "/ɪnˈdʌstriəl plɑːnt/", "n", "nhà máy công nghiệp", "There are fewer *industrial plants* in the country.", ""], ["river", "/ˈrɪvə(r)/", "n", "dòng sông", "There are more trees and *rivers* in the country.", ""], ["natural scenery", "/ˈnætʃrəl ˈsiːnəri/", "n", "phong cảnh thiên nhiên", "The country has beautiful *natural scenery*.", ""], ["kid", "/kɪd/", "n", "đứa trẻ", "Your *kids* can play outside.", ""], ["run around", "/rʌn əˈraʊnd/", "v", "chạy nhảy", "Children can *run around* in open spaces.", ""], ["safe", "/seɪf/", "adj", "an toàn", "The country is a *safe* place for children.", ""], ["environment", "/ɪnˈvaɪrənmənt/", "n", "môi trường", "Children need a safe *environment*.", ""]]}, {"id": "mall", "name": "Trung tâm mua sắm", "icon": "🛍️", "words": [["different", "/ˈdɪfrənt/", "adj", "khác biệt", "It is very *different* from the present shopping area.", ""], ["present", "/ˈpreznt/", "adj", "hiện tại", "It is different from the *present* shopping area.", ""], ["shopping area", "/ˈʃɒpɪŋ eəriə/", "n", "khu mua sắm", "The new mall is different from the present *shopping area*.", ""], ["roof", "/ruːf/", "n", "mái nhà", "All the shops are under one *roof*.", ""], ["humid", "/ˈhjuːmɪd/", "adj", "ẩm ướt, nồm", "It is very convenient during the hot and *humid* summer months.", ""], ["month", "/mʌnθ/", "n", "tháng", "It is hot in the summer *months*.", ""], ["customer", "/ˈkʌstəmə(r)/", "n", "khách hàng", "*Customers* will shop in comfort.", ""], ["in comfort", "/ɪn ˈkʌmfət/", "phr", "một cách thoải mái", "Customers will shop *in comfort*.", ""], ["notice", "/ˈnəʊtɪs/", "v", "để ý, nhận thấy", "Customers won't *notice* the weather.", ""], ["weather", "/ˈweðə(r)/", "n", "thời tiết", "Customers won't notice the *weather*.", ""], ["however", "/haʊˈevə(r)/", "adv", "tuy nhiên", "Some people, *however*, are not happy.", ""], ["change", "/tʃeɪndʒ/", "n", "sự thay đổi", "Some people are not happy about the *changes*.", ""], ["owner", "/ˈəʊnə(r)/", "n", "người chủ", "The *owners* of the small stores are worried.", ""], ["store", "/stɔː(r)/", "n", "cửa hàng", "There are many small *stores* on Tran Phu Street.", ""], ["business", "/ˈbɪznəs/", "n", "việc kinh doanh", "They think the mall will take their *business*.", ""], ["same", "/seɪm/", "adj", "giống nhau", "Some goods will be the *same*.", ""], ["mall", "/mɔːl/", "n", "trung tâm thương mại", "A new shopping *mall* is opening today.", ""], ["offer", "/ˈɒfə(r)/", "v", "cung cấp, đưa ra", "The stores in the mall will *offer* a wider selection.", ""], ["selection", "/sɪˈlekʃn/", "n", "sự lựa chọn (hàng hóa)", "The mall will offer a wider *selection* of products.", ""], ["product", "/ˈprɒdʌkt/", "n", "sản phẩm", "They sell many *products*.", ""], ["price", "/praɪs/", "n", "giá cả", "Some products are at cheaper *prices*.", ""], ["resident", "/ˈrezɪdənt/", "n", "cư dân", "The *residents* are concerned about the new mall.", ""], ["store owner", "/ˈstɔːr əʊnə(r)/", "n", "chủ cửa hàng", "The *store owners* have been worried for months.", ""], ["concerned", "/kənˈsɜːnd/", "adj", "lo lắng, quan tâm", "They have been *concerned* about the new mall.", ""], ["a few", "/ə fjuː/", "det", "một vài", "They have been worried for *a few* months.", ""], ["organize", "/ˈɔːɡənaɪz/", "v", "tổ chức", "They have *organized* a meeting.", ""], ["community", "/kəˈmjuːnəti/", "n", "cộng đồng", "They have organized a *community* meeting.", ""], ["meeting", "/ˈmiːtɪŋ/", "n", "cuộc họp", "They have organized a community *meeting*.", ""], ["in order to", "/ɪn ˈɔːdə tə/", "phr", "để, nhằm", "They met *in order to* discuss the situation.", ""], ["discuss", "/dɪˈskʌs/", "v", "thảo luận", "They met to *discuss* the situation.", ""], ["situation", "/ˌsɪtʃuˈeɪʃn/", "n", "tình hình", "They met to discuss the *situation*.", ""], ["pleased", "/pliːzd/", "adj", "hài lòng", "Not everyone is *pleased* with the new mall.", ""], ["comfortable", "/ˈkʌmftəbl/", "adj", "thoải mái", "It will be more *comfortable* to shop in the mall.", ""], ["close", "/kləʊz/", "v", "đóng cửa", "Some small stores may have to *close*.", ""]]}, {"id": "env", "name": "Môi trường & phố cổ", "icon": "🌿", "words": [["air", "/eə(r)/", "n", "không khí", "The *air* in this area is polluted.", ""], ["area", "/ˈeəriə/", "n", "khu vực", "The air in this *area* is polluted.", ""], ["smoke", "/sməʊk/", "n", "khói", "The air is polluted with *smoke* from factories.", ""], ["factory", "/ˈfæktri/", "n", "nhà máy", "There is smoke from the *factories*.", ""], ["polluted", "/pəˈluːtɪd/", "adj", "bị ô nhiễm", "The air in this area is *polluted*.", ""], ["clean", "/kliːn/", "adj", "sạch", "The air in the country is *clean*.", ""], ["fresh", "/freʃ/", "adj", "trong lành", "I love the *fresh* air in the country.", ""], ["noisy", "/ˈnɔɪzi/", "adj", "ồn ào", "The streets are very busy and *noisy*.", ""], ["during", "/ˈdjʊərɪŋ/", "prep", "trong suốt", "The streets are noisy *during* the day.", ""], ["incredibly", "/ɪnˈkredəbli/", "adv", "vô cùng, cực kỳ", "The people in Hoi An are *incredibly* friendly.", ""], ["friendly", "/ˈfrendli/", "adj", "thân thiện", "The people in Hoi An are incredibly *friendly*.", ""], ["helpful", "/ˈhelpfl/", "adj", "hay giúp đỡ", "The people in Hoi An are friendly and *helpful*.", ""], ["friendship", "/ˈfrendʃɪp/", "n", "tình bạn", "Our *friendship* is very important.", ""], ["helpless", "/ˈhelpləs/", "adj", "bất lực, không tự lo được", "The baby bird is *helpless*.", ""], ["helpfully", "/ˈhelpfəli/", "adv", "một cách hữu ích", "She answered *helpfully*.", ""], ["Old Quarter", "/əʊld ˈkwɔːtə(r)/", "n", "phố cổ", "The streets in the *Old Quarter* are not wide.", ""], ["wide", "/waɪd/", "adj", "rộng", "The streets in the Old Quarter are not *wide*.", ""], ["narrow", "/ˈnærəʊ/", "adj", "hẹp", "The streets in the Old Quarter are *narrow*.", ""]]}];
+var ALL = [];
+GROUPS.forEach(function(g){ g.items = g.words.map(function(a){ var o={id:g.id+"|"+a[0],g:g.id,en:a[0],ipa:a[1],pos:a[2],vi:a[3],ex:a[4],cmp:a[5]||""}; ALL.push(o); return o; }); });
+var KEY = "dt_vocab_citylife_v1";
+var M = {};
+try { M = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e) { M = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(M)); } catch(e) {} }
+function lv(w){ return M[w.id] || 0; }
+function bump(w, ok){ var v = lv(w); v = ok ? Math.min(5, v+1) : Math.max(0, v-1); M[w.id] = v; save(); updProg(); }
+var curG = "all", curMode = "learn";
+
+/* ---------- TTS ---------- */
+var VOICE = null;
+function pickVoice(){ var vs = speechSynthesis.getVoices(); VOICE = vs.find(function(v){return v.lang==="en-GB";}) || vs.find(function(v){return /en[-_]GB/i.test(v.lang);}) || vs.find(function(v){return /^en/i.test(v.lang);}) || null; }
+if ("speechSynthesis" in window){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function say(t){ if(!("speechSynthesis" in window)) return; speechSynthesis.cancel(); setTimeout(function(){ var u = new SpeechSynthesisUtterance(t.replace(/\*/g,"")); u.lang="en-GB"; u.rate=0.72; if(VOICE) u.voice=VOICE; speechSynthesis.speak(u); }, 80); }
+
+/* ---------- helpers ---------- */
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function shuf(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function pool(){ return curG==="all" ? ALL : GROUPS.find(function(g){return g.id===curG;}).items; }
+function exHTML(ex){ return esc(ex).replace(/\*(.+?)\*/g, "<b class=\"t\">$1</b>"); }
+function target(w){ var m = w.ex.match(/\*(.+?)\*/); return m ? m[1] : w.en; }
+function starStr(w){ var v=lv(w), s=""; for(var i=0;i<5;i++) s += i<v ? "★" : "☆"; return s; }
+function pickSession(n){
+  var p = pool().slice();
+  p.sort(function(a,b){ return (lv(a)+Math.random()*1.5) - (lv(b)+Math.random()*1.5); });
+  return shuf(p.slice(0, Math.min(n, p.length)));
+}
+function distract(w, field, n, src){
+  src = src || pool(); var seen = {}; seen[field(w).toLowerCase()] = 1; var out = [];
+  shuf(src.length >= 6 ? src : ALL).forEach(function(x){ var f = field(x); if(out.length<n && !seen[f.toLowerCase()]){ seen[f.toLowerCase()]=1; out.push(f); } });
+  if(out.length<n) shuf(ALL).forEach(function(x){ var f=field(x); if(out.length<n && !seen[f.toLowerCase()]){ seen[f.toLowerCase()]=1; out.push(f);} });
+  return out;
+}
+function updProg(){
+  var k = ALL.filter(function(w){return lv(w)>=3;}).length;
+  $("pbar").style.width = (k/ALL.length*100)+"%";
+  $("ptxt").textContent = "Đã thuộc " + k + "/" + ALL.length + " từ (★★★ trở lên = đã thuộc)";
+}
+
+/* ---------- nav ---------- */
+var MODES = [["learn","📖","Học từ"],["flash","🃏","Thẻ nhớ"],["listen","🎧","Nghe chọn"],["mean","💡","Chọn nghĩa"],["spell","✍️","Đánh vần"],["type","⌨️","Nghe & gõ từ"],["match","🔗","Ghép cặp"],["fill","📝","Điền câu"],["review","🔥","Ôn từ khó"]];
+function nav(){
+  var gh = "<button data-g=\"all\" class=\""+(curG==="all"?"on":"")+"\">⭐ Tất cả ("+ALL.length+")</button>";
+  GROUPS.forEach(function(g){ gh += "<button data-g=\""+g.id+"\" class=\""+(curG===g.id?"on":"")+"\">"+g.icon+" "+esc(g.name)+" ("+g.items.length+")</button>"; });
+  $("groups").innerHTML = gh;
+  var mh = ""; MODES.forEach(function(m){ mh += "<button data-m=\""+m[0]+"\" class=\""+(curMode===m[0]?"on":"")+"\"><span>"+m[1]+"</span>"+m[2]+"</button>"; });
+  $("modes").innerHTML = mh;
+}
+document.addEventListener("click", function(e){
+  var b = e.target.closest("[data-g]"); if(b){ curG = b.getAttribute("data-g"); nav(); run(); return; }
+  b = e.target.closest("[data-m]"); if(b){ curMode = b.getAttribute("data-m"); nav(); run(); return; }
+  b = e.target.closest("[data-say]"); if(b){ say(b.getAttribute("data-say")); }
+});
+function run(){
+  speechSynthesis && speechSynthesis.cancel && speechSynthesis.cancel();
+  ({learn:learn,flash:flash,listen:listenQ,mean:meanQ,spell:spellQ,match:matchQ,fill:fillQ,review:reviewQ,type:typeQ})[curMode]();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ---------- LEARN ---------- */
+function learn(){
+  var h = "<div class=\"toolbar\"><input id=\"q\" placeholder=\"🔍 Tìm từ (Anh hoặc Việt)…\"><button class=\"btn sec\" id=\"pr\">🖨️ In danh sách</button></div><div class=\"list\" id=\"lst\"></div>";
+  $("main").innerHTML = h;
+  function draw(){
+    var q = ($("q").value||"").toLowerCase().trim();
+    var s = "";
+    pool().filter(function(w){ return !q || w.en.toLowerCase().indexOf(q)>=0 || w.vi.toLowerCase().indexOf(q)>=0; }).forEach(function(w){
+      s += "<div class=\"w"+(lv(w)>=3?" known":"")+"\"><div class=\"row\"><div><span class=\"en\">"+esc(w.en)+"</span><span class=\"pos\">"+esc(w.pos)+"</span><div class=\"ipa\">"+esc(w.ipa)+"</div></div><button class=\"spk\" data-say=\""+esc(w.en)+"\">🔊</button></div>"
+        + (w.cmp ? "<div class=\"cmp\">→ so sánh hơn: "+esc(w.cmp)+"</div>" : "")
+        + "<div class=\"vi\">"+esc(w.vi)+"</div><div class=\"row\"><div class=\"ex\">"+exHTML(w.ex)+"</div><button class=\"spk\" data-say=\""+esc(w.ex.replace(/\*/g,""))+"\">💬</button></div><div class=\"stars\">"+starStr(w)+"</div></div>";
+    });
+    $("lst").innerHTML = s || "<p>Không tìm thấy từ nào.</p>";
+  }
+  $("q").addEventListener("input", draw);
+  $("pr").addEventListener("click", function(){ window.print(); });
+  draw();
+}
+
+/* ---------- FLASHCARDS ---------- */
+function flash(){
+  var deck = shuf(pool()), i = 0;
+  function show(){
+    if(i >= deck.length){ deck = shuf(pool()); i = 0; }
+    var w = deck[i];
+    $("main").innerHTML = "<div class=\"card\"><div class=\"qtop\"><span>Thẻ "+(i+1)+"/"+deck.length+"</span><span class=\"stars\">"+starStr(w)+"</span></div>"
+      + "<div class=\"flash\" id=\"fc\"><div class=\"fi\"><div class=\"fs front\"><div class=\"big\">"+esc(w.en)+"</div><div class=\"ipa\">"+esc(w.ipa)+"</div><div class=\"tag\" style=\"margin-top:14px\">👆 Chạm để lật thẻ</div></div>"
+      + "<div class=\"fs back\"><div class=\"big\">"+esc(w.vi)+"</div>"+(w.cmp?"<div>→ "+esc(w.cmp)+"</div>":"")+"<div style=\"margin-top:10px;font-style:italic\">"+esc(w.ex.replace(/\*/g,""))+"</div></div></div></div>"
+      + "<div class=\"row\" style=\"justify-content:center;gap:10px;flex-wrap:wrap\"><button class=\"spk\" data-say=\""+esc(w.en)+"\">🔊</button><button class=\"btn red\" id=\"no\">😕 Chưa nhớ</button><button class=\"btn\" id=\"yes\">😄 Đã nhớ</button></div></div>";
+    $("fc").addEventListener("click", function(){ this.classList.toggle("flip"); });
+    $("no").addEventListener("click", function(){ bump(w,false); deck.push(w); i++; show(); });
+    $("yes").addEventListener("click", function(){ bump(w,true); i++; show(); });
+    say(w.en);
+  }
+  show();
+}
+
+/* ---------- generic quiz engine (wrong = retry) ---------- */
+function quiz(title, n, build){
+  var items = pickSession(n), k = 0, score = 0;
+  function next(){
+    if(k >= items.length){ return end(); }
+    var w = items[k], firstTry = true;
+    var q = build(w);
+    $("main").innerHTML = "<div class=\"card\"><div class=\"qtop\"><span>"+title+"</span><span>Câu "+(k+1)+"/"+items.length+" · ✅ "+score+"</span></div><div class=\"qbar\"><div style=\"width:"+(k/items.length*100)+"%\"></div></div>"
+      + "<div class=\"center\">"+q.top+"</div><div class=\"opts\" id=\"opts\"></div><div class=\"fb\" id=\"fb\"></div></div>";
+    var oh = ""; shuf([q.ans].concat(q.wrong)).forEach(function(o){ oh += "<button class=\"opt\" data-o=\""+esc(o)+"\">"+esc(o)+"</button>"; });
+    $("opts").innerHTML = oh;
+    if(q.onShow) q.onShow();
+    $("opts").addEventListener("click", function(e){
+      var b = e.target.closest(".opt"); if(!b || b.classList.contains("ok")) return;
+      if(b.getAttribute("data-o") === q.ans){
+        b.classList.add("ok"); if(firstTry) score++; bump(w, firstTry);
+        $("fb").className = "fb ok"; $("fb").textContent = firstTry ? "🎉 Chính xác!" : "👍 Đúng rồi!";
+        say(q.speak || w.en);
+        setTimeout(function(){ k++; next(); }, 1200);
+      } else {
+        if(firstTry){ firstTry = false; bump(w, false); }
+        b.classList.add("bad"); $("fb").className = "fb no"; $("fb").textContent = "❌ Chưa đúng, thử lại nhé!";
+        setTimeout(function(){ b.classList.remove("bad"); }, 600);
+      }
+    });
+  }
+  function end(){
+    var pct = Math.round(score/items.length*100);
+    $("main").innerHTML = "<div class=\"card center\"><div class=\"endbig\">"+(pct>=90?"🏆":pct>=70?"🌟":pct>=50?"👍":"💪")+"</div><h2>Đúng ngay lần đầu: "+score+"/"+items.length+"</h2><p>"+(pct>=70?"Giỏi lắm! Tiếp tục phát huy nhé.":"Cố lên! Hãy luyện thêm để nhớ lâu hơn.")+"</p><button class=\"btn\" id=\"again\">🔁 Luyện tiếp</button></div>";
+    $("again").addEventListener("click", run);
+  }
+  next();
+}
+function listenQ(){
+  quiz("🎧 Nghe và chọn từ đúng", 10, function(w){
+    return { top: "<p class=\"hint\">Nghe và chọn từ em nghe được</p><button class=\"btn\" data-say=\""+esc(w.en)+"\">🔊 Nghe lại</button>",
+      ans: w.en, wrong: distract(w, function(x){return x.en;}, 3), onShow: function(){ say(w.en); } };
+  });
+}
+function meanQ(){
+  var flip = false;
+  quiz("💡 Chọn nghĩa đúng", 10, function(w){
+    flip = !flip;
+    if(flip) return { top: "<div class=\"big\">"+esc(w.en)+"</div><div class=\"ipa\">"+esc(w.ipa)+"</div><button class=\"spk\" data-say=\""+esc(w.en)+"\">🔊</button>",
+      ans: w.vi, wrong: distract(w, function(x){return x.vi;}, 3), onShow: function(){ say(w.en); } };
+    return { top: "<p class=\"tag\">Từ tiếng Anh nào có nghĩa là:</p><div class=\"big\">"+esc(w.vi)+"</div>", ans: w.en, wrong: distract(w, function(x){return x.en;}, 3) };
+  });
+}
+function fillQ(){
+  quiz("📝 Điền từ vào câu", 10, function(w){
+    var t = target(w);
+    var s = esc(w.ex).replace(/\*(.+?)\*/, "<span class=\"gap\">&nbsp;?&nbsp;</span>");
+    var src = pool().filter(function(x){ return x.g === w.g; });
+    var wr = []; var seen = {}; seen[t.toLowerCase()] = 1;
+    shuf(src.length>=4?src:ALL).forEach(function(x){ var tt = target(x); if(wr.length<3 && !seen[tt.toLowerCase()]){ seen[tt.toLowerCase()]=1; wr.push(tt);} });
+    return { top: "<div class=\"sent\">"+s+"</div><div class=\"tag\">Gợi ý: "+esc(w.vi)+"</div>", ans: t, wrong: wr, speak: w.ex };
+  });
+}
+
+/* ---------- SPELL ---------- */
+function spellQ(){
+  var items = pickSession(8), k = 0, score = 0;
+  function next(){
+    if(k >= items.length){
+      $("main").innerHTML = "<div class=\"card center\"><div class=\"endbig\">✍️</div><h2>Đánh vần đúng ngay: "+score+"/"+items.length+"</h2><button class=\"btn\" id=\"again\">🔁 Luyện tiếp</button></div>";
+      $("again").addEventListener("click", run); return;
+    }
+    var w = items[k], word = w.en.toLowerCase(), first = true, typed = [];
+    var letterCount = {};
+    word.split("").forEach(function(c){ letterCount[c] = (letterCount[c]||0) + 1; });
+    var tiles = [];
+    Object.keys(letterCount).forEach(function(c){ for(var i=0;i<letterCount[c];i++) tiles.push(c); });
+    tiles = shuf(tiles);
+    $("main").innerHTML = "<div class=\"card center\"><div class=\"qtop\"><span>✍️ Nghe và đánh vần</span><span>Từ "+(k+1)+"/"+items.length+" · ✅ "+score+"</span></div><div class=\"qbar\"><div style=\"width:"+(k/items.length*100)+"%\"></div></div>"
+      + "<div class=\"hint\">"+esc(w.vi)+"</div><div class=\"ipa\">"+esc(w.ipa)+"</div><button class=\"btn sec\" data-say=\""+esc(w.en)+"\" style=\"margin-top:8px\">🔊 Nghe lại</button>"
+      + "<div class=\"slots\" id=\"slots\"></div><div class=\"keys\" id=\"keys\"></div><div style=\"margin-top:12px\"><button class=\"key wide\" id=\"bk\">⌫ Xóa</button></div><div class=\"fb\" id=\"fb\"></div></div>";
+    var kh = ""; tiles.forEach(function(c, i){ kh += "<button class=\"key"+(c===" "?" wide":"")+"\" data-i=\""+i+"\">"+(c===" "?"␣ cách":esc(c))+"</button>"; });
+    $("keys").innerHTML = kh;
+    function drawSlots(){
+      var s = ""; for(var i=0;i<word.length;i++){ s += "<div class=\"slot"+(word[i]===" "?" sp":"")+"\">"+(typed[i]!==undefined ? (tiles[typed[i]]===" "?"":esc(tiles[typed[i]])) : "")+"</div>"; }
+      $("slots").innerHTML = s;
+    }
+    drawSlots(); say(w.en);
+    $("keys").addEventListener("click", function(e){
+      var b = e.target.closest(".key"); if(!b || b.classList.contains("used")) return;
+      if(typed.length >= word.length) return;
+      typed.push(parseInt(b.getAttribute("data-i"),10)); b.classList.add("used"); drawSlots();
+      if(typed.length === word.length){
+        var ans = typed.map(function(i){return tiles[i];}).join("");
+        if(ans === word){
+          if(first) score++; bump(w, first);
+          $("fb").className="fb ok"; $("fb").textContent = "🎉 Đúng rồi: " + w.en; say(w.en);
+          setTimeout(function(){ k++; next(); }, 1300);
+        } else {
+          if(first){ first=false; bump(w,false); }
+          $("slots").classList.add("bad"); $("fb").className="fb no"; $("fb").textContent="❌ Chưa đúng, thử lại nhé!";
+          setTimeout(function(){ $("slots").classList.remove("bad"); typed = []; document.querySelectorAll("#keys .key").forEach(function(x){x.classList.remove("used");}); drawSlots(); }, 900);
+        }
+      }
+    });
+    $("bk").addEventListener("click", function(){ if(!typed.length) return; var i = typed.pop(); document.querySelector("#keys .key[data-i=\""+i+"\"]").classList.remove("used"); drawSlots(); });
+  }
+  next();
+}
+
+/* ---------- MATCH ---------- */
+function matchQ(){
+  var set = pickSession(5), done = 0, sel = null, errs = 0, wrongIds = {};
+  var L = shuf(set), R = shuf(set);
+  var h = "<div class=\"card\"><div class=\"qtop\"><span>🔗 Ghép từ với nghĩa</span><span id=\"mst\">0/"+set.length+"</span></div><div class=\"match\"><div class=\"col\">";
+  L.forEach(function(w){ h += "<div class=\"mi\" data-side=\"L\" data-id=\""+esc(w.id)+"\">"+esc(w.en)+"</div>"; });
+  h += "</div><div class=\"col\">";
+  R.forEach(function(w){ h += "<div class=\"mi\" data-side=\"R\" data-id=\""+esc(w.id)+"\">"+esc(w.vi)+"</div>"; });
+  h += "</div></div><div class=\"fb\" id=\"fb\"></div></div>";
+  $("main").innerHTML = h;
+  $("main").querySelector(".match").addEventListener("click", function(e){
+    var b = e.target.closest(".mi"); if(!b || b.classList.contains("done")) return;
+    if(b.getAttribute("data-side")==="L"){ var w0 = ALL.find(function(x){return x.id===b.getAttribute("data-id");}); say(w0.en); }
+    if(!sel || sel.getAttribute("data-side") === b.getAttribute("data-side")){
+      if(sel) sel.classList.remove("sel"); sel = b; b.classList.add("sel"); return;
+    }
+    var id1 = sel.getAttribute("data-id"), id2 = b.getAttribute("data-id");
+    if(id1 === id2){
+      sel.classList.remove("sel"); sel.classList.add("done"); b.classList.add("done"); done++;
+      var w = ALL.find(function(x){return x.id===id1;}); bump(w, !wrongIds[id1]);
+      $("mst").textContent = done + "/" + set.length;
+      if(done === set.length){ $("fb").className="fb ok"; $("fb").innerHTML = "🎉 Hoàn thành! <button class=\"btn\" id=\"again\" style=\"margin-left:8px\">🔁 Bộ mới</button>"; $("again").addEventListener("click", run); }
+    } else {
+      wrongIds[id1] = 1; wrongIds[id2] = 1; errs++;
+      var a = sel, c = b; a.classList.add("bad"); c.classList.add("bad");
+      setTimeout(function(){ a.classList.remove("bad","sel"); c.classList.remove("bad"); }, 500);
+    }
+    sel = null;
+  });
+}
+
+/* ---------- REVIEW HARD WORDS ---------- */
+function reviewQ(){
+  var hard = pool().filter(function(w){ return lv(w) < 3; });
+  if(!hard.length){ $("main").innerHTML = "<div class=\"card center\"><div class=\"endbig\">🏆</div><h2>Tuyệt vời!</h2><p>Em đã thuộc hết các từ trong nhóm này. Chọn nhóm khác hoặc luyện lại để giữ trí nhớ nhé.</p></div>"; return; }
+  var items = shuf(hard).slice(0, 10), k = 0, score = 0;
+  var types = ["listen","mean","fill"];
+  function next(){
+    if(k >= items.length){ $("main").innerHTML = "<div class=\"card center\"><div class=\"endbig\">🔥</div><h2>Ôn xong: "+score+"/"+items.length+" đúng ngay</h2><p>Còn "+pool().filter(function(w){return lv(w)<3;}).length+" từ cần ôn.</p><button class=\"btn\" id=\"again\">🔁 Ôn tiếp</button></div>"; $("again").addEventListener("click", run); return; }
+    var w = items[k], t = types[k % 3], first = true, q;
+    if(t === "listen") q = { top: "<p class=\"hint\">🎧 Nghe và chọn từ</p><button class=\"btn\" data-say=\""+esc(w.en)+"\">🔊 Nghe lại</button>", ans: w.en, wrong: distract(w,function(x){return x.en;},3) };
+    else if(t === "mean") q = { top: "<div class=\"big\">"+esc(w.en)+"</div><div class=\"ipa\">"+esc(w.ipa)+"</div>", ans: w.vi, wrong: distract(w,function(x){return x.vi;},3) };
+    else { var tg = target(w), seen = {}; seen[tg.toLowerCase()]=1; var wr = []; shuf(ALL.filter(function(x){return x.g===w.g;})).forEach(function(x){ var tt=target(x); if(wr.length<3 && !seen[tt.toLowerCase()]){ seen[tt.toLowerCase()]=1; wr.push(tt);} });
+      q = { top: "<div class=\"sent\">"+esc(w.ex).replace(/\*(.+?)\*/, "<span class=\"gap\">&nbsp;?&nbsp;</span>")+"</div><div class=\"tag\">Gợi ý: "+esc(w.vi)+"</div>", ans: tg, wrong: wr }; }
+    $("main").innerHTML = "<div class=\"card\"><div class=\"qtop\"><span>🔥 Ôn từ khó</span><span>Câu "+(k+1)+"/"+items.length+" · ✅ "+score+"</span></div><div class=\"qbar\"><div style=\"width:"+(k/items.length*100)+"%\"></div></div><div class=\"center\">"+q.top+"</div><div class=\"opts\" id=\"opts\"></div><div class=\"fb\" id=\"fb\"></div></div>";
+    var oh = ""; shuf([q.ans].concat(q.wrong)).forEach(function(o){ oh += "<button class=\"opt\" data-o=\""+esc(o)+"\">"+esc(o)+"</button>"; });
+    $("opts").innerHTML = oh;
+    if(t !== "fill") say(w.en);
+    $("opts").addEventListener("click", function(e){
+      var b = e.target.closest(".opt"); if(!b || b.classList.contains("ok")) return;
+      if(b.getAttribute("data-o") === q.ans){ b.classList.add("ok"); if(first) score++; bump(w, first); $("fb").className="fb ok"; $("fb").textContent="🎉 Chính xác!"; say(t==="fill"?w.ex:w.en); setTimeout(function(){k++; next();}, 1200); }
+      else { if(first){ first=false; bump(w,false);} b.classList.add("bad"); $("fb").className="fb no"; $("fb").textContent="❌ Thử lại nhé!"; setTimeout(function(){ b.classList.remove("bad"); }, 600); }
+    });
+  }
+  next();
+}
+
+/* ---------- LISTEN & TYPE ---------- */
+function typeQ(){
+  var items = pickSession(10), k = 0, score = 0;
+  function nrm(s){ return s.toLowerCase().replace(/[’']/g,"'").replace(/ +/g," ").replace(/^ | $/g,"").replace(/[.!?,]+$/,""); }
+  function next(){
+    if(k >= items.length){
+      $("main").innerHTML = "<div class=\"card center\"><div class=\"endbig\">⌨️</div><h2>Gõ đúng ngay lần đầu: "+score+"/"+items.length+"</h2><p>"+(score/items.length>=0.7?"Giỏi lắm! Tai nghe và chính tả của em rất tốt.":"Cố lên! Nghe kỹ từng âm rồi gõ lại nhé.")+"</p><button class=\"btn\" id=\"again\">🔁 Luyện tiếp</button></div>";
+      $("again").addEventListener("click", run); return;
+    }
+    var w = items[k], first = true, tries = 0, busy = false;
+    $("main").innerHTML = "<div class=\"card center\"><div class=\"qtop\"><span>⌨️ Nghe và gõ từ</span><span>Từ "+(k+1)+"/"+items.length+" · ✅ "+score+"</span></div><div class=\"qbar\"><div style=\"width:"+(k/items.length*100)+"%\"></div></div>"
+      + "<p class=\"hint\">Nghe và gõ lại từ em nghe được</p>"
+      + "<div class=\"row\" style=\"justify-content:center;gap:10px;flex-wrap:wrap\"><button class=\"btn\" data-say=\""+esc(w.en)+"\">🔊 Nghe lại</button><button class=\"btn sec\" id=\"slow\">🐢 Nghe chậm</button></div>"
+      + "<div id=\"hintbox\"></div>"
+      + "<input class=\"tin\" id=\"tin\" autocomplete=\"off\" autocapitalize=\"off\" spellcheck=\"false\" placeholder=\"Gõ từ ở đây…\">"
+      + "<div style=\"margin-top:12px\"><button class=\"btn\" id=\"chk\">✔ Kiểm tra</button></div><div class=\"fb\" id=\"fb\"></div></div>";
+    say(w.en); setTimeout(function(){ $("tin").focus(); }, 150);
+    $("slow").addEventListener("click", function(){
+      if(!("speechSynthesis" in window)) return; speechSynthesis.cancel();
+      setTimeout(function(){ var u = new SpeechSynthesisUtterance(w.en); u.lang="en-GB"; u.rate=0.45; if(VOICE) u.voice=VOICE; speechSynthesis.speak(u); }, 80);
+    });
+    function check(){
+      if(busy) return;
+      var v = nrm($("tin").value); if(!v) return;
+      if(v === nrm(w.en)){
+        busy = true; if(first) score++; bump(w, first);
+        $("tin").className = "tin ok"; $("tin").disabled = true;
+        $("fb").className = "fb ok"; $("fb").textContent = "🎉 Chính xác! " + w.en + " = " + w.vi; say(w.en);
+        setTimeout(function(){ k++; next(); }, 1500);
+      } else {
+        if(first){ first = false; bump(w, false); }
+        tries++;
+        $("tin").className = "tin bad"; setTimeout(function(){ $("tin").className = "tin"; }, 500);
+        $("fb").className = "fb no"; $("fb").textContent = "❌ Chưa đúng, nghe lại và gõ lại nhé!";
+        if(tries === 2) $("hintbox").innerHTML = "<div class=\"tag\" style=\"margin-top:10px\">💡 Gợi ý nghĩa: <b>"+esc(w.vi)+"</b></div>";
+        if(tries >= 3){
+          var m = w.en.split("").map(function(c, i){ return c===" " ? "  " : (i===0 || w.en[i-1]===" " ? c : "_"); }).join(" ");
+          $("hintbox").innerHTML = "<div class=\"tag\" style=\"margin-top:10px\">💡 Gợi ý nghĩa: <b>"+esc(w.vi)+"</b></div><div class=\"mask\">"+esc(m)+"</div>";
+        }
+        say(w.en); $("tin").select();
+      }
+    }
+    $("chk").addEventListener("click", check);
+    $("tin").addEventListener("keydown", function(e){ if(e.key === "Enter") check(); });
+  }
+  next();
+}
+
+nav(); updProg(); run();
+</script>
+</body>
+</html>
